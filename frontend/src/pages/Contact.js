@@ -2,6 +2,8 @@ import React from 'react';
 import Navigation from '../components/Navigation';
 import Logo from '../components/logo';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
+import SocialNetwork from '../components/SocialNetworks';
+import ButtonsBottom from '../components/ButtonsBottom';
 
 const Contact = () => {
     return (
@@ -39,7 +41,9 @@ const Contact = () => {
                     </CopyToClipboard>
                 </div>
             </div>
+            <SocialNetwork />
         </div>
+        <ButtonsBottom left={'/project-4'}/>
         </div>
     );
 };
