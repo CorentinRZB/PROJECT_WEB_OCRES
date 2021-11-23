@@ -2,18 +2,18 @@ import React from 'react';
 import './App.css';
 import {Redirect, Route, Switch} from 'react-router-dom';
 import Home from './pages/Home';
-import { Project1, Project2, Project3, Project4 , Project5} from './pages/Projects';
+import { Presentation, Membres, Planning, Structure, Sondages} from './pages/Widgets';
 import Contact from './pages/Contact';
 
 const App = () => {
   return (
     <Switch>
       <Route exact path="/" component={Home}/>
-      <Route exact path="/project-1" component={Project1}/>
-      <Route exact path="/project-2" component={Project2}/>
-      <Route exact path="/project-3" component={Project3}/>
-      <Route exact path="/project-4" component={Project4}/>
-      <Route exact path="/project-5" component={Project5}/>
+      <Route exact path="/presentation" component={Presentation}/>
+      <Route exact path="/membres" component={Membres}/>
+      <Route exact path="/planning" component={Planning}/>
+      <Route exact path="/structure" component={Structure}/>
+      <Route exact path="/sondages" component={Sondages}/>
       <Route exact path="/contact" component={Contact}/>
       <Redirect to="/" />
     </Switch>

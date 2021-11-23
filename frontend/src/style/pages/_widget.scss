@@ -1,4 +1,4 @@
-.project {
+.widget {
   position: absolute;
   height: 100vh;
   width: 100vw;
@@ -31,13 +31,13 @@
     font-size: 1.1rem;
     line-height: 20px;
     transform: translateY(-100%);
-    animation: navProject 1s ease forwards;
+    animation: navWidget 1s ease forwards;
 
     @media screen and (max-width: 650px){
       left: 70%;
     }
   
-    @keyframes navProject {
+    @keyframes navWidget {
       to {
         transform: translateY(0);
       }
@@ -48,7 +48,7 @@
       top: -250px;
     }
 
-    .nav-projects {
+    .nav-widgets {
       transform: translateX(67px);
       padding: 0 20px;
     }
@@ -58,15 +58,15 @@
     left: 50%;
     transform: translateX(-50%);
     transform: scale(0);
-    animation: logoProject 2s ease forwards;
+    animation: logoWidget 2s ease forwards;
   
-    @keyframes logoProject {
+    @keyframes logoWidget {
       to {
         transform: scale(1);
       }
     }
   }
-  .project-main {
+  .widget-main {
     margin: 8rem 1rem 0;
     display: grid;
     grid-template-columns: 33% 67%;
@@ -84,7 +84,7 @@
       margin: 3rem 1rem 0;
     }
 
-    .project-content {
+    .widget-content {
       margin-right: 20px;
       
       @media screen and (max-width: 700px){

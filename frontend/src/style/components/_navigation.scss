@@ -41,14 +41,14 @@
     color: $black;
   }
 
-  .nav-portfolio {
+  .nav-menu {
     cursor: pointer;
     display: flex;
     // padding-right: 6rem;
     transition: .5s;
 
-    &:hover .nav-projects,
-    .nav-projects:hover {
+    &:hover .nav-widgets,
+    .nav-widgets:hover {
 
       visibility: visible;
       opacity: 1;
@@ -58,7 +58,7 @@
       }
     }
 
-    .nav-projects {
+    .nav-widgets {
       position: absolute;
       visibility: hidden;
       opacity: 0;

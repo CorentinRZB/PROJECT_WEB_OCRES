@@ -9,27 +9,27 @@ const Navigation = () => {
                     <li>Accueil</li>
                 </NavLink>
 
-                <li className="nav-portfolio">Portfolio
-                <ul className="nav-projects">
-                    <NavLink to="/project-1" activeClassName="nav-active"
+                <li className="nav-menu">Menu
+                <ul className="nav-widgets">
+                    <NavLink to="/presentation" activeClassName="nav-active"
                     className="hover">
-                        <li>project 1</li>
+                        <li>Présentation</li>
                     </NavLink>
-                    <NavLink to="/project-2" activeClassName="nav-active"
+                    <NavLink to="/membres" activeClassName="nav-active"
                     className="hover">
-                        <li>project 2</li>
+                        <li>Membres</li>
                     </NavLink>
-                    <NavLink to="/project-3" activeClassName="nav-active"
+                    <NavLink to="/planning" activeClassName="nav-active"
                     className="hover">
-                        <li>project 3</li>
+                        <li>Planning</li>
                     </NavLink>
-                    <NavLink to="/project-4" activeClassName="nav-active"
+                    <NavLink to="/structure" activeClassName="nav-active"
                     className="hover">
-                        <li>project 4</li>
+                        <li>Structure</li>
                     </NavLink>
-                    <NavLink to="/project-5" activeClassName="nav-active"
+                    <NavLink to="/sondages" activeClassName="nav-active"
                     className="hover">
-                        <li>project 5</li>
+                        <li>Sondages</li>
                     </NavLink>
                 </ul>
                 </li>

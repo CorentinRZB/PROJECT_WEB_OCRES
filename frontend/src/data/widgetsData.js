@@ -1,4 +1,4 @@
-export const projectsData = [
+export const widgetsData = [
   {
     id: 1,
     title: "Casta",

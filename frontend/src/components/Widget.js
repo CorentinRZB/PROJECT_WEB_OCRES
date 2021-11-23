@@ -1,21 +1,22 @@
 import React, {useState} from 'react';
-import {projectsData} from '../data/projectsData';
+import { widgetsData } from '../data/widgetsData';
 
-const Project = (props) => {
-    const [currentProject] = useState(projectsData);
-    const project = currentProject[props.projectNumber];
+const Widget = (props) => {
+
+    const[currentWidget]=useState(widgetsData)
+    const widget = currentWidget[props.widgetNumber];
 
     let left = Math.floor(Math.random() * 200 + 700) + "px";
     let top = Math.floor(Math.random() * 200 + 150) + "px";
     let transform = "scale(" + (Math.random() + 0.7) + ")";
 
     return (
-        <div className="project-main">
-            <div className="project-content">
-                <h1>{project.title}</h1>
-                <p>{project.date}</p>
+        <div className="widget-main">
+            <div className="widget-content">
+                <h1>{widget.title}</h1>
+                <p>{widget.date}</p>
                 <ul className="languages">
-                    {project.languages.map((item) => {
+                    {widget.languages.map((item) => {
                         return <li key={item}>{item} </li>
                     })}
                 </ul>
@@ -23,13 +24,13 @@ const Project = (props) => {
             <div className="img-content">
                 <div className="img-container hover">
                     <span>
-                        <h3>{project.title}</h3>
-                        <p>{project.infos}</p>
+                        <h3>{widget.title}</h3>
+                        <p>{widget.infos}</p>
                     </span>
-                    <img src={project.img} alt={project.title}/>
+                    <img src={widget.img} alt={widget.title}/>
                 </div>
                 <div className="button-container">
-                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="hover">
+                    <a href={widget.link} target="_blank" rel="noopener noreferrer" className="hover">
                     <span className="button">Voir le site</span>
                     </a>
                 </div>
@@ -39,4 +40,4 @@ const Project = (props) => {
     );
 };
 
-export default Project;
+export default Widget;
