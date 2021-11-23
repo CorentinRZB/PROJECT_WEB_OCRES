@@ -1,14 +1,18 @@
 import React from 'react';
 import './App.css';
 import {Redirect, Route, Switch} from 'react-router-dom';
-import Home from './pages/Home';
-import { Presentation, Membres, Planning, Structure, Sondages} from './pages/Widgets';
+import Accueil from './pages/Accueil';
+import Presentation from './pages/Presentation';
+import Membres from './pages/Membres';
+import Planning from './pages/Planning';
+import Structure from './pages/Structure';
+import Sondages from './pages/Sondages';
 import Contact from './pages/Contact';
 
 const App = () => {
   return (
     <Switch>
-      <Route exact path="/" component={Home}/>
+      <Route exact path="/" component={Accueil}/>
       <Route exact path="/presentation" component={Presentation}/>
       <Route exact path="/membres" component={Membres}/>
       <Route exact path="/planning" component={Planning}/>

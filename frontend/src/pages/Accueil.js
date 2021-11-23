@@ -4,7 +4,7 @@ import SocialNetwork from '../components/SocialNetworks';
 import DynamicText from '../components/DynamicText';
 import ButtonsBottom from '../components/ButtonsBottom';
 
-const Home = () => {
+const Accueil = () => {
     return (
     <div>
         <div className="home">
@@ -22,4 +22,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default Accueil;
