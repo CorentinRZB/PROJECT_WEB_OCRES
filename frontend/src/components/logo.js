@@ -2,7 +2,10 @@ import React from 'react';
 
 const Logo = () => {
     return (
-        <span className ="logo">ECE Poker</span>
+        <div>
+            <img className="logo"
+            src="/assets\img/logo2.svg" alt="logo2"></img>
+        </div>
     )
 }
 

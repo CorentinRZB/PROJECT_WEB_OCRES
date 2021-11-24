@@ -33,6 +33,20 @@
       display: none;
     }
   }
+  .logo {
+    left: 45%;
+    transform: translateX(-50%);
+    transform: scale(0);
+    animation: logoWidget 2s ease forwards;
+    width:280px;
+    height:280px;
+  
+    @keyframes logoWidget {
+      to {
+        transform: scale(1);
+      }
+    }
+  }
 
   .home-main {
     display: grid;

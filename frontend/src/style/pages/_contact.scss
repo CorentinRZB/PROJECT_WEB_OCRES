@@ -40,10 +40,17 @@
     }
   }
   .logo {
-    top: 8px;
-    right: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    transform: scale(0);
+    animation: logoWidget 2s ease forwards;
+  
+    @keyframes logoWidget {
+      to {
+        transform: scale(1);
+      }
+    }
   }
-
   .contact-form {
     margin: 7% 0 0 24%;
     max-width: 50%;

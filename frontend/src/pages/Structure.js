@@ -1,6 +1,6 @@
 import React from 'react';
 import ButtonsBottom from '../components/ButtonsBottom';
-import Logo from '../components/logo';
+import Logo from '../components/Logo';
 import Navigation from '../components/Navigation';
 import Widget from '../components/Widget';
 

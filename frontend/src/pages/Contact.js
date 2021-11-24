@@ -1,6 +1,6 @@
 import React from 'react';
 import Navigation from '../components/Navigation';
-import Logo from '../components/logo';
+import Logo from '../components/Logo';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import SocialNetwork from '../components/SocialNetworks';
 import ButtonsBottom from '../components/ButtonsBottom';
