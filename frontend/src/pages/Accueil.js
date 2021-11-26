@@ -4,13 +4,14 @@ import SocialNetwork from '../components/SocialNetworks';
 import DynamicText from '../components/DynamicText';
 import ButtonsBottom from '../components/ButtonsBottom';
 import Logo from '../components/Logo';
+import Jeton from '../components/Jeton';
 
 const Accueil = () => {
     return (
     <div>
         <div className="home">
             <Navigation/>
-            <Logo/>
+            <Logo/> 
             <SocialNetwork/>
             <div className="home-main">
                 <div className="main-content">

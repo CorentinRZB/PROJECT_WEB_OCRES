@@ -75,4 +75,20 @@
       }
     }
   }
+  
+  .jeton {
+    top: 1rem;
+  left: 1.4rem;
+    transform: translateX(-50%);
+    transform: scale(0);
+    animation: logoWidget 2s ease forwards;
+    width:280px;
+    height:280px;
+  
+    @keyframes logoWidget {
+      to {
+        transform: scale(1);
+      }
+    }
+  }
 }
