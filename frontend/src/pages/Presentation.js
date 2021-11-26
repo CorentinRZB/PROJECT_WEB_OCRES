@@ -2,7 +2,7 @@ import React from 'react';
 import ButtonsBottom from '../components/ButtonsBottom';
 import Logo from '../components/Logo';
 import Navigation from '../components/Navigation';
-
+//A FAIRE
 const Presentation = () => {
 
     let left = Math.floor(Math.random() * 200 + 700) + "px";
