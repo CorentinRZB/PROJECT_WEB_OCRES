@@ -4,7 +4,6 @@ import SocialNetwork from '../components/SocialNetworks';
 import DynamicText from '../components/DynamicText';
 import ButtonsBottom from '../components/ButtonsBottom';
 import Logo from '../components/Logo';
-import Jeton from '../components/Jeton';
 
 const Accueil = () => {
     return (
