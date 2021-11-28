@@ -12,11 +12,12 @@
     height: 300px;
     width: 300px;
     border-radius: 50%;
-    background: $color-3;
+    background: $color-2;
+    opacity: 0.5;
     top: -150px;
     left: -160px;
     z-index: -1;
-    animation: navAnim 20s infinite alternate;
+    //animation: navAnim 20s infinite alternate;
 
     @keyframes navAnim {
       50% {
@@ -76,19 +77,5 @@
     }
   }
   
-  .jeton {
-    top: 1rem;
-  left: 1.4rem;
-    transform: translateX(-50%);
-    transform: scale(0);
-    animation: logoWidget 2s ease forwards;
-    width:280px;
-    height:280px;
   
-    @keyframes logoWidget {
-      to {
-        transform: scale(1);
-      }
-    }
-  }
 }
