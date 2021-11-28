@@ -1,6 +1,5 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
-import Jeton from './Jeton';
 
 const Navigation = () => {
     return ( 
@@ -40,7 +39,6 @@ const Navigation = () => {
                     <li>Contact</li>
                 </NavLink>
             </ul>
-            <Jeton/>
         </div>
     );
 };
