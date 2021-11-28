@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SocialNetwork = () => {
+const Réseaux = () => {
 
     const anim = () => {
         let navLinks = document.querySelectorAll('.social-network a');
@@ -37,4 +37,4 @@ const SocialNetwork = () => {
     );
 };
 
-export default SocialNetwork;
+export default Réseaux;

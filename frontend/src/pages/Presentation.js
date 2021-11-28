@@ -1,5 +1,5 @@
 import React from 'react';
-import ButtonsBottom from '../components/ButtonsBottom';
+import Scroll from '../components/Scroll';
 import Logo from '../components/Logo';
 import Navigation from '../components/Navigation';
 import "../style/pages/_presentation.scss";
@@ -48,7 +48,7 @@ const Presentation = () => {
                         <h3 align="center">Paul Perrin</h3>
                     </div>
                 </div>
-                <ButtonsBottom left={'/'} right={'/membres'} />
+                <Scroll left={'/'} right={'/membres'} />
             </div>
         </main>
     );

@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const ButtonsBottom = (props) => {
+const Scroll = (props) => {
     return (
         <div className="scroll-bottom">
             <div className="sb-main">
@@ -21,4 +21,4 @@ const ButtonsBottom = (props) => {
     );
 };
 
-export default ButtonsBottom;
+export default Scroll;

@@ -1,5 +1,5 @@
 import React from 'react';
-import ButtonsBottom from '../components/ButtonsBottom';
+import Scroll from '../components/Scroll';
 import Logo from '../components/Logo';
 import Navigation from '../components/Navigation';
 
@@ -10,7 +10,7 @@ const Membres = () => {
             <div className="widget">
                 <Navigation />
                 <Logo />
-                <ButtonsBottom left={'/presentation'} right={'/planning'} />
+                <Scroll left={'/presentation'} right={'/planning'} />
             </div>
         </main>
     );

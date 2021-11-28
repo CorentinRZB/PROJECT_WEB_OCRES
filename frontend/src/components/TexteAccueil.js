@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 
-const DynamicText = () => {
+const TexteAccueil = () => {
     
      useEffect(() => {
          let array = ["tournois", "events", "rencontres", "plaisir"];
@@ -53,4 +53,4 @@ const DynamicText = () => {
     );
 };
 
-export default DynamicText;
+export default TexteAccueil;

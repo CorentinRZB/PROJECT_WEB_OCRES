@@ -1,5 +1,5 @@
 import React from 'react';
-import ButtonsBottom from '../components/ButtonsBottom';
+import Scroll from '../components/Scroll';
 import Logo from '../components/Logo';
 import Navigation from '../components/Navigation';
 
@@ -8,7 +8,7 @@ const Sondages = () => {
         <div className="widget">
                 <Navigation />
                 <Logo />
-                <ButtonsBottom left={'/structure'} right={'/contact'} />
+                <Scroll left={'/structure'} right={'/contact'} />
             </div>
     );
 };

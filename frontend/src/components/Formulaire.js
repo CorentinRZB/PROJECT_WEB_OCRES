@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-const ContactForm = () => {
+const Formulaire = () => {
   const [name, setName] = useState("");
   const [company, setCompany] = useState("");
   const [phone, setPhone] = useState("");
@@ -155,4 +155,4 @@ const ContactForm = () => {
   );
 };
 
-export default ContactForm;
+export default Formulaire;

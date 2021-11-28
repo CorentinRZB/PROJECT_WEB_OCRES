@@ -1,8 +1,8 @@
 import React from 'react';
 import Navigation from '../components/Navigation';
-import SocialNetwork from '../components/SocialNetworks';
-import DynamicText from '../components/DynamicText';
-import ButtonsBottom from '../components/ButtonsBottom';
+import Réseaux from '../components/Réseaux';
+import TexteAccueil from '../components/TexteAccueil';
+import Scroll from '../components/Scroll';
 import Logo from '../components/Logo';
 
 const Accueil = () => {
@@ -11,14 +11,14 @@ const Accueil = () => {
         <div className="home">
             <Navigation/>
             <Logo/> 
-            <SocialNetwork/>
+            <Réseaux/>
             <div className="home-main">
                 <div className="main-content">
                     <h1> ECE POKER </h1>
-                    <h2><DynamicText/></h2>
+                    <h2><TexteAccueil/></h2>
                 </div>
             </div>
-            <ButtonsBottom right={"/presentation"} />
+            <Scroll right={"/presentation"} />
         </div>
     </div>
     );
