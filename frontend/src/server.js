@@ -10,7 +10,7 @@ app.use(express.json());
 
 app.listen(3000, () => console.log("Server Running..."));
 
-const pollData = require("../frontend/src/data.json");
+const pollData = require("../src/data.json");
 app.get("/poll", function (req, res) {
   res.send(pollData);
 });

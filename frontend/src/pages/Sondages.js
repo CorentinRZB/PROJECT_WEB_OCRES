@@ -3,7 +3,9 @@ import Scroll from '../components/Scroll';
 import Logo from '../components/Logo';
 import Navigation from '../components/Navigation';
 import "../style/pages/_sondages.scss";
-import '../data.json';
+import data from '../data.json';
+import 'chart.js/auto';
+import {Pie}            from 'react-chartjs-2';
 
 const Sondages = () => {
 
@@ -46,12 +48,14 @@ const Sondages = () => {
   if (voteData) {
     pollOptions = voteData.map((item) => {
       return (
+        <div>
         <li key={item.id}>
           <button onClick={submitVote} data-id={item.id}>
             {item.option}
             <span>- {item.votes} Votes</span>
           </button>          
         </li>
+        </div>
       );
     });
   }
@@ -68,7 +72,36 @@ const Sondages = () => {
           {pollOptions}
           </ul>
       <p>Total Votes: {totalVotes}</p>
-    </div>
+       </div>
+       <div className="pie">
+            <Pie
+            
+            data={{
+                labels: ['Les Grands Tournois !', 'Les Inter-membres !', 'Les Afterworks !', 'Les Tournois Online !'],
+                datasets: [
+                  {
+                      labels: '# of votes',
+                      data: [data[0].votes, data[1].votes, data[2].votes, data[3].votes],
+                      backgroundColor: ['#FF6384','#36A2EB','#FFCE56','#8bc34a',],
+                      borderWidth: 1,
+                  },
+              ],
+          }}
+          options={{
+            responsive: true,
+            maintainAspectRatio: false,
+                scales: {
+                  yAxes: [
+                      {
+                        ticks: {
+                            beginAtZero: true,
+                        },
+                    },
+                    ],
+              },
+          }}
+        />
+        </div>
     </div>
   );
   
