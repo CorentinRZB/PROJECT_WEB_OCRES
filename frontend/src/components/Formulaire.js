@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import emailjs from "emailjs-com";
 
 const Formulaire = () => {
   const [name, setName] = useState("");
@@ -33,19 +34,49 @@ const Formulaire = () => {
     };
 
     if (name && isEmail() && message) {
-      const templateId = "template_yrg83h7";
-
       nameS.classList.remove("red");
       emailS.classList.remove("red");
       messageS.classList.remove("red");
 
-      sendFeedback(templateId, {
-        name,
-        company,
-        phone,
-        email,
-        message,
-      });
+      emailjs
+        .send(
+          "service_zvmb35k",
+          "template_yrg83h7",
+          {
+            name,
+            company,
+            phone,
+            email,
+            message,
+          },
+          "user_WNeacQJhf6hMqYE9sfRWp",
+        )
+        .then(
+          () => {
+            formMess.innerHTML = "Message envoyé ! Je vous recontacterai dès que possible.";
+            formMess.style.background = "#00c1ec";
+            formMess.style.opacity = "1";
+
+            document.getElementById("name").classList.remove("error");
+            document.getElementById("email").classList.remove("error");
+            document.getElementById("message").classList.remove("error");
+            setName("");
+            setCompany("");
+            setPhone("");
+            setEmail("");
+            setMessage("");
+
+            setTimeout(() => {
+              formMess.style.opacity = "0";
+            }, 5000);
+          },
+          (err) => {
+            console.log(err);
+            formMess.style.background = "rgb(253, 87, 87)";
+            formMess.innerHTML =
+              "Une erreur s'est produite, veuillez réessayer.";
+          }
+        );
     } else {
       formMess.innerHTML = "Merci de remplir correctement les champs requis *";
       formMess.style.background = "rgb(253, 87, 87)";
@@ -63,40 +94,9 @@ const Formulaire = () => {
     }
   };
 
-  const sendFeedback = (templateId, variables) => {
-    let formMess = document.querySelector(".form-message");
-
-    window.emailjs
-      .send("gmail", templateId, variables)
-      .then((res) => {
-        formMess.innerHTML =
-          "Message envoyé ! Nous vous recontacterons dès que possible.";
-        formMess.style.background = "#00c1ec";
-        formMess.style.opacity = "1";
-
-        document.getElementById("name").classList.remove("error");
-        document.getElementById("email").classList.remove("error");
-        document.getElementById("message").classList.remove("error");
-        setName("");
-        setCompany("");
-        setPhone("");
-        setEmail("");
-        setMessage("");
-
-        setTimeout(() => {
-          formMess.style.opacity = "0";
-        }, 5000);
-      })
-      .catch(
-        (err) =>
-          (formMess.innerHTML =
-            "Une erreur s'est produite, veuillez réessayer.")
-      );
-  };
-
   return (
     <form className="contact-form">
-      <h2>contactez-nous</h2>
+      <h3>Contactez-nous</h3>
       <div className="form-content">
         <input
           type="text"
@@ -111,14 +111,16 @@ const Formulaire = () => {
           type="text"
           id="company"
           name="company"
+          required
           onChange={(e) => setCompany(e.target.value)}
-          placeholder="société"
+          placeholder="promo"
           value={company}
         />
         <input
           type="text"
           id="phone"
           name="phone"
+          required
           onChange={(e) => setPhone(e.target.value)}
           placeholder="téléphone"
           value={phone}
@@ -148,7 +150,7 @@ const Formulaire = () => {
         className="button hover"
         type="submit"
         value="envoyer"
-        onClick={handleSubmit}
+        onClick={(e) => handleSubmit(e)}
       />
       <div className="form-message"></div>
     </form>
