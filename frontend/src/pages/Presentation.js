@@ -1,34 +1,54 @@
 import React from 'react';
-import ButtonsBottom from '../components/ButtonsBottom';
+import Scroll from '../components/Scroll';
 import Logo from '../components/Logo';
 import Navigation from '../components/Navigation';
-//A FAIRE
+import "../style/pages/_presentation.scss";
+
 const Presentation = () => {
-
-    let left = Math.floor(Math.random() * 200 + 700) + "px";
-    let top = Math.floor(Math.random() * 200 + 150) + "px";
-    let transform = "scale(" + (Math.random() + 0.7) + ")";
-
 
     return (
         <main>
             <div className="widget">
                 <Navigation />
                 <Logo/>
-                <div className="img-content">
-                    <div className="img-container hover">
-                        <img className="img-content" src="/assets/presentation/PP-CorentinR.png" alt="photo1" width="283" height="340"></img>
-                        <img className="img-content" src="/assets/presentation/PP-ArnaudM.png" alt="photo2" width="283" height="340"></img>
-                        <img className="img-content" src="/assets/presentation/PP-MatthieuB.png" alt="photo3" width="283" height="340"></img>
-                        <img className="img-content" src="/assets/presentation/PP-AntoineG.png" alt="photo4" width="283" height="340"></img>
-                        <img className="img-content" src="/assets/presentation/PP-CamilleV.png" alt="photo5" width="283" height="340"></img>
-                        <img className="img-content" src="/assets/presentation/PP-AntoineC.png" alt="photo6" width="283" height="340"></img>
-                        <img className="img-content" src="/assets/presentation/PP-RichardL.png" alt="photo7" width="283" height="340"></img>
-                        <img className="img-content" src="/assets/presentation/PP-PaulP.png" alt="photo8" width="283" height="340"></img>
-                     </div>
-                     <span className="random-circle" style={{left, top, transform}}></span>
-                 </div>
-                <ButtonsBottom left={'/'} right={'/membres'} />
+                <div className="titre">
+                    <h1 align="center"> Présentation du Bureau ECE Poker 2021-2022 </h1>
+                </div>
+                <div className="row">
+                    <div className="column">
+                        <img className="images" src="/assets/presentation/PP-CorentinR.png" alt="photo1"></img>
+                        <h3 align="center">Corentin Rozenblum</h3>
+                    </div>
+                    <div className="column">
+                        <img className="images" src="/assets/presentation/PP-ArnaudM.png" alt="photo2"></img>
+                        <h3 align="center">Arnaud Meilhoc</h3>
+                    </div>
+                    <div className="column">
+                        <img className="images" src="/assets/presentation/PP-MatthieuB.png" alt="photo3"></img>
+                        <h3 align="center">Matthieu Brax</h3>
+                    </div>
+                    <div className="column">
+                        <img className="images" src="/assets/presentation/PP-CamilleV.png" alt="photo4"></img>
+                        <h3 align="center">Camille Vittiglio</h3>
+                    </div>
+                    <div className="column">
+                        <img className="images" src="/assets/presentation/PP-AntoineC.png" alt="photo5"></img>
+                        <h3 align="center">Antoine Cruveilher</h3>
+                    </div>
+                    <div className="column">
+                        <img className="images" src="/assets/presentation/PP-AntoineG.png" alt="photo6"></img>
+                        <h3 align="center">Antoine Gourlaouen</h3>
+                    </div>
+                    <div className="column">
+                        <img className="images" src="/assets/presentation/PP-RichardL.png" alt="photo7"></img>
+                        <h3 align="center">Richard Lhuissier</h3>
+                    </div>
+                    <div className="column">
+                        <img className="images" src="/assets/presentation/PP-PaulP.png" alt="photo8"></img>
+                        <h3 align="center">Paul Perrin</h3>
+                    </div>
+                </div>
+                <Scroll left={'/'} right={'/membres'} />
             </div>
         </main>
     );

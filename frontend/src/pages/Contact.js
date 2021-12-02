@@ -2,16 +2,16 @@ import React from 'react';
 import Navigation from '../components/Navigation';
 import Logo from '../components/Logo';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
-import SocialNetwork from '../components/SocialNetworks';
-import ButtonsBottom from '../components/ButtonsBottom';
-import ContactForm from '../components/ContactForm';
+import Réseaux from '../components/Réseaux';
+import Scroll from '../components/Scroll';
+import Formulaire from '../components/Formulaire';
 
 const Contact = () => {
     return (
         <div className="contact">
             <Navigation/>
             <Logo/> 
-            <ContactForm/>
+            <Formulaire/>
             <div className="contact-infos">
                 <div className="address">
                     <div className="content">
@@ -42,9 +42,9 @@ const Contact = () => {
                     </CopyToClipboard>
                 </div>
             </div>
-            <SocialNetwork />
+            <Réseaux />
         </div>
-        <ButtonsBottom left={'/sondages'}/>
+        <Scroll left={'/sondages'}/>
         </div>
     );
 };
