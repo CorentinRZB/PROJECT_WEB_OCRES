@@ -1,14 +1,19 @@
-
 const express = require("express");
 const cors = require("cors");
 const fs = require("fs");
 
+// définition paramètre serveur
+const hostname ='localhost';
+const port = 3000;
+
+//création de l'app
 const app = express();
 app.use(cors());
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
-app.listen(3000, () => console.log("Server Running..."));
+//démarrer le serveur
+app.listen(port, () => console.log("Server Running..."));
 
 const pollData = require("../src/data.json");
 app.get("/poll", function (req, res) {
@@ -27,3 +32,11 @@ app.post("/poll", function (req, res) {
       });
     }
   });
+
+  const dateData = require("../src/date.json");
+  app.get('/date', function (req, res) {
+    res.send(dateData);
+  });
+
+  //const {google} = require('googleapis')
+  
