@@ -5,7 +5,7 @@ import Navigation from '../components/Navigation';
 import "../style/pages/_sondages.scss";
 import data from '../data.json';
 import 'chart.js/auto';
-import {Pie}            from 'react-chartjs-2';
+import {Pie} from 'react-chartjs-2';
 
 const Sondages = () => {
 
