@@ -63,6 +63,7 @@ Voici une liste des ressources qui nous ont été utiles durant la réalisation 
 * [EmailJS](https://dashboard.emailjs.com/admin)
 * [Graphique Camembert](https://www.youtube.com/watch?v=c_9c5zkfQ3Y&ab_channel=WornOffKeys)
 * [Google Map](https://dev.to/jessicabetts/how-to-use-google-maps-api-and-react-js-26c2)
+              (https://stackoverflow.com/questions/68316426/placing-google-map-inside-a-col-div)
 * [Compte à rebours](https://ichi.pro/fr/creer-un-compte-a-rebours-d-evenements-reutilisable-dans-react-6050538678834)
 
 
