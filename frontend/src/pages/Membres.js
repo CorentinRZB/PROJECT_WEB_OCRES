@@ -10,7 +10,7 @@ const Membres = () => {
             <div className="widget">
                 <Navigation />
                 <Logo />
-                <Scroll left={'/presentation'} right={'/planning'} />
+                <Scroll left={'/presentation'} right={'/map'} />
             </div>
         </main>
     );

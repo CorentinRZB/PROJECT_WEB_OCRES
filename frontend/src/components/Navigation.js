@@ -19,9 +19,9 @@ const Navigation = () => {
                     className="hover">
                         <li>Membres</li>
                     </NavLink>
-                    <NavLink to="/planning" activeClassName="nav-active"
+                    <NavLink to="/map" activeClassName="nav-active"
                     className="hover">
-                        <li>Planning</li>
+                        <li>Map</li>
                     </NavLink>
                     <NavLink to="/structure" activeClassName="nav-active"
                     className="hover">

@@ -2,20 +2,20 @@ import React from 'react';
 import Scroll from '../components/Scroll';
 import Logo from '../components/Logo';
 import Navigation from '../components/Navigation';
-import PlanningComp from '../components/PlanningComp';
+import MapBase from '../components/MapBase';
 
 
-const Planning = () => {
+const Map = () => {
+      
     return (
         <main>
             <div className="widget">
                 <Navigation />
                 <Logo />
-                <PlanningComp/>
+                <MapBase/>
                 <Scroll left={'/membres'} right={'/structure'} />
             </div>
         </main>
     );
-};
-
-export default Planning;
+    };
+export default Map;

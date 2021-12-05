@@ -9,7 +9,7 @@ const Structure = () => {
             <div className="widget">
                 <Navigation />
                 <Logo />
-                <Scroll left={'/planning'} right={'/sondages'} />
+                <Scroll left={'/map'} right={'/sondages'} />
             </div>
         </main>
     );
