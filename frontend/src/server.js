@@ -38,5 +38,5 @@ app.post("/poll", function (req, res) {
     res.send(dateData);
   });
 
-  //const {google} = require('googleapis')
+
   

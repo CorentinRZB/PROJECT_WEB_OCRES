@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import Scroll from '../components/Scroll';
 import Logo from '../components/Logo';
 import Navigation from '../components/Navigation';

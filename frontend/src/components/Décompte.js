@@ -3,6 +3,7 @@ import "../style/components/_décompte.scss";
 
 class Décompte extends Component {
    
+   //Décompte initialisé à 0
     state = {
         days: 0,
         hours: '00',
@@ -11,15 +12,18 @@ class Décompte extends Component {
         timeUp: false
    
    }
-  
+ 
    componentDidMount() {
       setInterval(() => {        
-         let eventDate = +new Date(this.props.date);
-         let difference = eventDate - (+new Date());
+         let eventDate = +new Date(this.props.date);  //on récupère la date lue dans la bdd locale
+         let difference = eventDate - (+new Date()); //différence de temps entre la date de l'event et la date d'aujourd'hui
 
+         //si la date est passée ou l'event est aujourd'hui, on affiche pas le compte à rebours
    if (difference < 1) { 
             this.setState({ timeUp: true });
          } else {
+            //si l'event n'est pas encore arrivé
+            //on set les valeur du state de ma classe
             let days = Math.floor(difference / (1000 * 60 * 60 * 24));
             let hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
             let minutes = Math.floor((difference / (1000 * 60)) % 60);

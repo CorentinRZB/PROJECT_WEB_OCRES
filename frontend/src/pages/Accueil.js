@@ -13,7 +13,6 @@ class Accueil extends React.Component {
         this.state={reponse:""};
     }
         
-
     callAPI(){
       fetch("http://localhost:3000/date")
         .then(res => res.json())
