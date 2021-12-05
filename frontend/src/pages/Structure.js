@@ -64,7 +64,7 @@ const Structure = () => {
                     <button className="button" onClick={() => setClicked2(true)}> Sauvegarder les Valeurs </button>
                     <button className="button" onClick={() => setClicked(true)}> Créer ma propre Structure ! </button>
                 </div>
-                <Scroll left={'/planning'} right={'/sondages'} />
+                <Scroll left={'/map'} right={'/sondages'} />
             </div>
         </main>
     );

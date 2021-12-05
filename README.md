@@ -11,7 +11,7 @@ Ce Dashboard est composé de 6 widgets qui ont des fonctionnalités différentes
 Widget n°0 : (Page d'accueil, présentant le logo de l'association ainsi que le menu de navigation.)
 Widget n°1 : Page de Présentation, montrant chaque élément du Bureau, avec la possibilité de les modifier via une API locale.
 Widget n°2 : Page des Membres, montrant l'ensemble des membres de l'association, avec également la possibilité de modifier.
-Widget n°3 : Page Planning, annonçant les prochaines évènements prévus.
+Widget n°3 : Page Map, utilisant l'API Google MAP pour montrer où se déroulent les tournois.
 Widget n°4 : Page Sondages, permettant à nos membres de nous donner un retour via un vote, le résultat étant sous la forme d'un graphe.
 Widget n°5 : Page Structure, permettant de lancer une horloge annonçant les changements de blindes.
 Widget n°6 : Page Contact, permettant de nous envoyer un email dans le cadre d'une demande liée à un évènement ou un partenariat.
