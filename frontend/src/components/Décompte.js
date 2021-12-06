@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import "../style/components/_décompte.scss";
 
+//classe qui effectue mon compte à rebours jusqu'à mon prochain événement
 class Décompte extends Component {
    
    //Décompte initialisé à 0
@@ -15,7 +16,7 @@ class Décompte extends Component {
  
    componentDidMount() {
       setInterval(() => {        
-         let eventDate = +new Date(this.props.date);  //on récupère la date lue dans la bdd locale
+         let eventDate = +new Date(this.props.date);  //on récupère la date lue dans la bdd locale (temps en ms)
          let difference = eventDate - (+new Date()); //différence de temps entre la date de l'event et la date d'aujourd'hui
 
          //si la date est passée ou l'event est aujourd'hui, on affiche pas le compte à rebours
