@@ -3,7 +3,6 @@ import Scroll from '../components/Scroll';
 import Logo from '../components/Logo';
 import Navigation from '../components/Navigation';
 import "../style/pages/_sondages.scss";
-import data from '../json/data.json';
 import 'chart.js/auto';
 import {Pie} from 'react-chartjs-2';
 
@@ -12,6 +11,10 @@ const Sondages = () => {
     const [voteData, setVoteData] = useState();
     const [totalVotes, setTotalVotes] = useState(0);
     const [voted, setVoted] = useState(false);
+    const[resultat1,setResultat1]=useState();
+    const[resultat2,setResultat2]=useState();
+    const[resultat3,setResultat3]=useState();
+    const[resultat4,setResultat4]=useState();
 
   const url = "http://localhost:3000/poll";
   useEffect(() => {
@@ -19,6 +22,10 @@ const Sondages = () => {
       .then((response) => response.json())
       .then((data) => {
         setVoteData(data);
+        setResultat1(data[0].votes);
+        setResultat2(data[1].votes);
+        setResultat3(data[2].votes);
+        setResultat4(data[3].votes);
         let sum = 0;
         data.forEach(function (obj) {
           sum += obj.votes;
@@ -80,8 +87,7 @@ const Sondages = () => {
                 datasets: [
                   {
                       labels: '# of votes',
-                      data: [data[0].votes, data[1].votes, data[2].votes, data[3].votes],
-                      //RECUPERER LES DATAS DEPUIS UN GET 
+                      data: [resultat1, resultat2, resultat3,resultat4],
                       backgroundColor: ['#FF6384','#36A2EB','#FFCE56','#8bc34a',],
                       borderWidth: 1,
                   },
