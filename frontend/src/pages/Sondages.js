@@ -3,7 +3,7 @@ import Scroll from '../components/Scroll';
 import Logo from '../components/Logo';
 import Navigation from '../components/Navigation';
 import "../style/pages/_sondages.scss";
-import data from '../data.json';
+import data from '../json/data.json';
 import 'chart.js/auto';
 import {Pie} from 'react-chartjs-2';
 
@@ -75,13 +75,13 @@ const Sondages = () => {
        </div>
        <div className="pie">
             <Pie
-            
             data={{
                 labels: ['Les Grands Tournois !', 'Les Inter-membres !', 'Les Afterworks !', 'Les Tournois Online !'],
                 datasets: [
                   {
                       labels: '# of votes',
                       data: [data[0].votes, data[1].votes, data[2].votes, data[3].votes],
+                      //RECUPERER LES DATAS DEPUIS UN GET 
                       backgroundColor: ['#FF6384','#36A2EB','#FFCE56','#8bc34a',],
                       borderWidth: 1,
                   },

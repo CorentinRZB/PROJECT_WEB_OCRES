@@ -4,7 +4,7 @@ import Logo from '../components/Logo';
 import Navigation from '../components/Navigation';
 import '../style/pages/_structure.scss'
 import { Icon } from '@iconify/react';
-import structure from '../structure.json';
+import axios from 'axios';
 
 
 const Structure = () => {
@@ -12,21 +12,28 @@ const Structure = () => {
     const url = "http://localhost:3000/structure";
     const [clicked, setClicked] = useState(false);
     const [clicked2, setClicked2] = useState(false);
-    const [valeur1, setValeur1] = useState(structure[0].valeur);
-    const [valeur2, setValeur2] = useState(structure[1].valeur);
-    const [valeur3, setValeur3] = useState(structure[2].valeur);
-    const [valeur4, setValeur4] = useState(structure[3].valeur);
 
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
+
+    useEffect(() => {
+        axios.get(url)
+    .then(res => {
+        setValeur1(res.data[0].valeur);
+        setValeur2(res.data[1].valeur);
+        setValeur3(res.data[2].valeur);
+        setValeur4(res.data[3].valeur);
+        })
         
-      });
+    },[]);
+    
+    const [valeur1, setValeur1] = useState('');
+    const [valeur2, setValeur2] = useState('');
+    const [valeur3, setValeur3] = useState('');
+    const [valeur4, setValeur4] = useState('');
 
     
         useEffect(() => {
             if(clicked) {
-        window.location.href = "https://poker-clock.herokuapp.com/";
+                window.open("https://poker-clock.herokuapp.com/", "blank");
             }
             if(clicked2) {
                 const options = {
@@ -37,6 +44,7 @@ const Structure = () => {
                 fetch(url, options)
                   .then((res) => res.json())
                   .then((res) => console.log(res));
+                  
             }
       });
 
@@ -51,22 +59,22 @@ const Structure = () => {
                     <div className="column">
                     <Icon className="jeton" icon="mdi:poker-chip" color="blue" />
                         <h3 align="center">Valeur : </h3>
-                        <input className="input" type="number" value={valeur1} onInput={e => setValeur1(e.target.value)}/>
+                        <input className="input" type="number" value={valeur1} onChange={e => setValeur1(e.target.value)}/>
                     </div>
                     <div className="column">
                     <Icon className="jeton" icon="mdi:poker-chip" color="green" />
                         <h3 align="center">Valeur : </h3>
-                        <input className="input" type="number" value={valeur2} onInput={e => setValeur2(e.target.value)}/>
+                        <input className="input" type="number" value={valeur2} onChange={e => setValeur2(e.target.value)}/>
                     </div>
                     <div className="column">
                     <Icon className="jeton" icon="mdi:poker-chip" color="red" />
                     <h3 align="center">Valeur :</h3>
-                    <input className="input" type="number" value={valeur3} onInput={e => setValeur3(e.target.value)}/>
+                    <input className="input" type="number" value={valeur3} onChange={e => setValeur3(e.target.value)}/>
                     </div>
                     <div className="column">
                     <Icon className="jeton" icon="mdi:poker-chip" color="black" />
                         <h3 align="center">Valeur : </h3>
-                        <input className="input" type="number" value={valeur4} onInput={e => setValeur4(e.target.value)}/>
+                        <input className="input" type="number" value={valeur4} onChange={e => setValeur4(e.target.value)}/>
                     </div>
                 </div>
                 <div className="button-container-struct">
