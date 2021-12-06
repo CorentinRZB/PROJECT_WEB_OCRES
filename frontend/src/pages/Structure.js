@@ -12,17 +12,17 @@ const Structure = () => {
     const url = "http://localhost:3000/structure";
     const [clicked, setClicked] = useState(false);
     const [clicked2, setClicked2] = useState(false);
-
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        setValeur1(data);
-      });
-
     const [valeur1, setValeur1] = useState(structure[0].valeur);
     const [valeur2, setValeur2] = useState(structure[1].valeur);
     const [valeur3, setValeur3] = useState(structure[2].valeur);
     const [valeur4, setValeur4] = useState(structure[3].valeur);
+
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        
+      });
+
     
         useEffect(() => {
             if(clicked) {

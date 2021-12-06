@@ -32,6 +32,12 @@ app.post("/poll", function (req, res) {
       });
     }
   });
+
+  const structureData = require("../src/structure.json");
+  app.get("/structure", function (req, res) {
+    res.send(structureData);
+  });
+  
   app.post("/structure", function (req, res) {  
     if (req.body) {
       fs.writeFileSync("structure.json", JSON.stringify(req.body));
