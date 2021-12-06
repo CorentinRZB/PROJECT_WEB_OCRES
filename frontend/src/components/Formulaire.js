@@ -3,11 +3,14 @@ import { useState } from "react";
 import emailjs from "emailjs-com";
 
 const Formulaire = () => {
+  //Déclaration de chaque input
   const [name, setName] = useState("");
   const [company, setCompany] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+
+  //Récupération des données saisies
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,8 +21,9 @@ const Formulaire = () => {
 
     const isEmail = () => {
       let isMail = document.getElementById("not-mail");
-      let regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+      let regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/; //regex pour récupérer forcément un mail
 
+      //Vérification du champ email
       if (email.match(regex)) {
         isMail.style.display = "none";
         return true;
@@ -33,15 +37,17 @@ const Formulaire = () => {
       }
     };
 
+    //Validation des champs
     if (name && isEmail() && message) {
       nameS.classList.remove("red");
       emailS.classList.remove("red");
       messageS.classList.remove("red");
 
+      //appel de emailJS
       emailjs
         .send(
-          "service_zvmb35k",
-          "template_yrg83h7",
+          "service_zvmb35k", //ID de mon service
+          "template_yrg83h7", //ID de mon template
           {
             name,
             company,
@@ -49,7 +55,7 @@ const Formulaire = () => {
             email,
             message,
           },
-          "user_WNeacQJhf6hMqYE9sfRWp",
+          "user_WNeacQJhf6hMqYE9sfRWp",//ID utilisateur
         )
         .then(
           () => {
@@ -60,6 +66,7 @@ const Formulaire = () => {
             document.getElementById("name").classList.remove("error");
             document.getElementById("email").classList.remove("error");
             document.getElementById("message").classList.remove("error");
+            //Réinitialisation des champs
             setName("");
             setCompany("");
             setPhone("");
@@ -70,6 +77,7 @@ const Formulaire = () => {
               formMess.style.opacity = "0";
             }, 5000);
           },
+          //Message d'erreur
           (err) => {
             console.log(err);
             formMess.style.background = "rgb(253, 87, 87)";
@@ -77,6 +85,7 @@ const Formulaire = () => {
               "Une erreur s'est produite, veuillez réessayer.";
           }
         );
+        //Vérification des champs obligatoires
     } else {
       formMess.innerHTML = "Merci de remplir correctement les champs requis *";
       formMess.style.background = "rgb(253, 87, 87)";

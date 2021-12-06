@@ -1,7 +1,9 @@
 import React from 'react';
 
+//Réseaux affichés en haut à droite de la page d'accueil
 const Réseaux = () => {
 
+    //Animation quand on passe la souris sur les icones
     const anim = () => {
         let navLinks = document.querySelectorAll('.social-network a');
 

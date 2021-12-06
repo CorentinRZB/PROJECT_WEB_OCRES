@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
+//Composant de scrolling permettant de changer de widget
 const Scroll = (props) => {
     return (
         <div className="scroll-bottom">
