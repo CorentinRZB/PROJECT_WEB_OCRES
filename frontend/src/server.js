@@ -32,6 +32,18 @@ app.post("/poll", function (req, res) {
       });
     }
   });
+  app.post("/structure", function (req, res) {  
+    if (req.body) {
+      fs.writeFileSync("structure.json", JSON.stringify(req.body));
+      res.send({
+        message: "Data Saved",
+      });
+    } else {
+      res.status(400).send({
+        message: "Error No Data",
+      });
+    }
+  });
 
   const dateData = require("../src/date.json");
   app.get('/date', function (req, res) {

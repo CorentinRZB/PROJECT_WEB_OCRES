@@ -7,11 +7,17 @@ import { Icon } from '@iconify/react';
 import structure from '../structure.json';
 
 
-
 const Structure = () => {
 
+    const url = "http://localhost:3000/structure";
     const [clicked, setClicked] = useState(false);
     const [clicked2, setClicked2] = useState(false);
+
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        setValeur1(data);
+      });
 
     const [valeur1, setValeur1] = useState(structure[0].valeur);
     const [valeur2, setValeur2] = useState(structure[1].valeur);
@@ -23,14 +29,17 @@ const Structure = () => {
         window.location.href = "https://poker-clock.herokuapp.com/";
             }
             if(clicked2) {
-                /* post dans structure.json*/
-                structure[0].valeur=valeur1;
-                structure[1].valeur=valeur2;
-                structure[2].valeur=valeur3;
-                structure[3].valeur=valeur4;
-                
+                const options = {
+                  method: "POST",
+                  body: JSON.stringify([{"valeur":valeur1},{"valeur":valeur2},{"valeur":valeur3},{"valeur":valeur4}]),
+                  headers: { "Content-Type": "application/json" },
+                };
+                fetch(url, options)
+                  .then((res) => res.json())
+                  .then((res) => console.log(res));
             }
       });
+
 
 
     return (
@@ -61,7 +70,7 @@ const Structure = () => {
                     </div>
                 </div>
                 <div className="button-container-struct">
-                    <button className="button" onClick={() => setClicked2(true)}> Sauvegarder les Valeurs </button>
+                    <button className="button" onClick={() => setClicked2(true)}> Sauvegarder mes Valeurs ! </button>
                     <button className="button" onClick={() => setClicked(true)}> Créer ma propre Structure ! </button>
                 </div>
                 <Scroll left={'/map'} right={'/sondages'} />
