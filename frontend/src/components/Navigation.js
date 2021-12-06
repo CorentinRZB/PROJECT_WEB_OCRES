@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 
+//Composant navigation permettant de pouvoir se déplacer de pages en pages
 const Navigation = () => {
     return ( 
         <div className="navigation">

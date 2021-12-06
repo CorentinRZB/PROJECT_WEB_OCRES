@@ -8,11 +8,14 @@ import Décompte from '../components/Décompte';
 
 class Accueil extends React.Component {
 
+    //Constructeur
     constructor(props){
         super(props);
         this.state={reponse:""};
     }
-        
+
+    
+    //Création fonction de l'appel à l'API
     callAPI(){
       fetch("http://localhost:3000/date")
         .then(res => res.json())
@@ -21,6 +24,7 @@ class Accueil extends React.Component {
        });
 }
 
+//Appel API
 componentDidMount() {
     this.callAPI();
 }

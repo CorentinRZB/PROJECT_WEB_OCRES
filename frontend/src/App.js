@@ -11,6 +11,7 @@ import Contact from './pages/Contact';
 
 const App = () => {
   return (
+    //Création des routes pour chaque component
     <Switch>
       <Route exact path="/" component={Accueil}/>
       <Route exact path="/presentation" component={Presentation}/>

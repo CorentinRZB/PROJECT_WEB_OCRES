@@ -1,5 +1,6 @@
 import React from 'react';
 
+//Logo affiché en haut de chaque widget
 const Logo = () => {
     return (
         <div>

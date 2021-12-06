@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 
+//Composant affichant un texte animé sur la page d'accueil
 const TexteAccueil = () => {
     
      useEffect(() => {
@@ -9,6 +10,7 @@ const TexteAccueil = () => {
 
          const target = document.getElementById("text-target");
 
+         //Animation de chaque lettre des mots
          const createLetter = () => {
              const letter = document.createElement("span");
              target.appendChild(letter);
@@ -23,6 +25,7 @@ const TexteAccueil = () => {
              },2000);
          };
 
+         //boucle d'animation des mots
          const loop = () => {
              setTimeout(() => {
                  if(wordIndex >= array.length) {
