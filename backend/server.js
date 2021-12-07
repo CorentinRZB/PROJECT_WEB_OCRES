@@ -41,7 +41,7 @@ const structureData = require("./structure.json");
     res.send(structureData);
   });
   
-// REQUETE POST STRUCTURES
+// REQUETE POST STRUCTURE
   app.post("/structure", function (req, res) {  
     if (req.body) {
       fs.writeFileSync("structure.json", JSON.stringify(req.body));
@@ -60,6 +60,90 @@ const structureData = require("./structure.json");
   app.get('/date', function (req, res) {
     res.send(dateData);
   });
+
+
+
+
+  /////partie connection mongoose à la base de donnée mongo
+const mongoose = require('mongoose');
+const app2 = express();
+const UserModel = require("./models/users.models");
+
+app2.use(express.json());
+
+//changer url et mettre celui de mongo atlas
+mongoose.connect("mongodb://localhost:27017/users", {
+    useNewUrlParser: true, 
+}
+);
+
+app2.get("/", async (req,res) => {
+  const user = new UserModel({email: "coco@gmail.com", password: "ECE"});
+
+  try{
+    await user.save();
+  }catch(err){
+    console.log(err);
+  }
+});
+
+app2.listen(3001, () => {
+  console.log("Server running on port 3001...");
+});
+
+/*
+//REQUETE GET MONGO API
+app2.get("/users", function(req,res){
+  User.find(function(err,users){
+    if(err){
+      res.send(err);
+    }
+    res.json(users);
+  }); 
+});
+
+//REQUETE POST MONGO API
+app2.post("/users", function(req,res){
+  User.create(function(err,user){
+    if(err){
+      res.send(err);
+    }
+    res.json(users);
+  }); 
+});
+
+
+//REQUETE GET BY ID MONGO API
+app2.get("/users/:id", function(req,res){
+  User.findById(req.params.id,function(err,user){
+    if(err){
+      res.send(err);
+    }
+    res.json(user);
+  }); 
+});
+
+//REQUETE PUT BY ID MONGO API
+app2.put("/users/:id", function(req,res){
+  User.findByIdAndUpdate(req.params.id,req.body, function(err,user){
+    if(err){
+      res.send(err);
+    }
+    res.json(user); 
+  }); 
+});
+
+//REQUETE DELETE BY ID MONGO API
+app2.delete("/users/:id", function(req,res){
+  User.findByIdAndRemove(req.params.id,req.body, function(err,user){
+    if(err){
+      res.send(err);
+    }
+    res.json(user); 
+  }); 
+});
+
+*/
 
 
   
