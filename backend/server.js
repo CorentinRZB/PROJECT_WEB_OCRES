@@ -13,7 +13,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
 // Démarrage du serveur
-app.listen(port, () => console.log("Server Running..."));
+app.listen(port, () => console.log("Server Running on port 3000..."));
 
 // REQUETE GET SONDAGES
 const pollData = require("./data.json");
@@ -67,21 +67,22 @@ const structureData = require("./structure.json");
   /////partie connection mongoose à la base de donnée mongo
 const mongoose = require('mongoose');
 const app2 = express();
-const UserModel = require("./models/users.models");
+const UsersModel = require("./models/users.models");
 
 app2.use(express.json());
 
 //changer url et mettre celui de mongo atlas
-mongoose.connect("mongodb://localhost:27017/users", {
+mongoose.connect("mongodb+srv://ecepoker:ece2021@crud.fnkos.mongodb.net/users?retryWrites=true&w=majority", {
     useNewUrlParser: true, 
 }
 );
 
 app2.get("/", async (req,res) => {
-  const user = new UserModel({email: "coco@gmail.com", password: "ECE"});
+  const users = new UsersModel({email: "coco@gmail.com", password: "ECE"});
 
   try{
-    await user.save();
+    await users.save();
+    res.send("inserted data");
   }catch(err){
     console.log(err);
   }

@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 
 //Definition du schema pour le user model
-var UserSchema = new mongoose.Schema({
+var UsersSchema = new mongoose.Schema({
     id: String,
     firstname: String,
     lastname: String,
@@ -12,14 +12,14 @@ var UserSchema = new mongoose.Schema({
     },
     password: {
       type : String,
-      reqiuired : true,
+      required : true,
     },
 
   });
   
   //creation du user model
-  const User = mongoose.model("User", UserSchema);
-  module.exports = User;
+  const Users = mongoose.model("users", UsersSchema);
+  module.exports = Users;
   
   /*
   //REQUETE GET MONGO API
