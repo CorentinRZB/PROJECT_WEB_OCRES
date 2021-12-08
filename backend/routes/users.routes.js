@@ -15,7 +15,7 @@ router.get('/', isTokenValid, handleGetAll);
 router.get('/:id', asyncHandler(handleGetOne))
 
 router.post('/', asyncHandler(handlePost))
-router.post('/login', asyncHandler(handleAuthenticate))
+router.post('/connexion', asyncHandler(handleAuthenticate))
 
 module.exports = router
 */

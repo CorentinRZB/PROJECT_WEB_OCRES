@@ -65,6 +65,8 @@ Voici une liste des ressources qui nous ont été utiles durant la réalisation 
 * [Google Map](https://dev.to/jessicabetts/how-to-use-google-maps-api-and-react-js-26c2)
               (https://stackoverflow.com/questions/68316426/placing-google-map-inside-a-col-div)
 * [Compte à rebours](https://ichi.pro/fr/creer-un-compte-a-rebours-d-evenements-reutilisable-dans-react-6050538678834)
+* [Storybook] (https://www.youtube.com/watch?v=FUKpWgRyPlU&ab_channel=WebDevSimplified)
+* [CRUD] (https://www.youtube.com/watch?v=wgGkF4k9c7A)
 
 
 ## Auteurs

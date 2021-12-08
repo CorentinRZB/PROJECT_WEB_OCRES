@@ -8,9 +8,6 @@ import Map from './pages/Map';
 import Structure from './pages/Structure';
 import Sondages from './pages/Sondages';
 import Contact from './pages/Contact';
-import Register from './components/Register';
-import Login from './components/Login';
-import Users from './components/Users';
 
 const App = () => {
   return (
@@ -19,9 +16,6 @@ const App = () => {
       <Route exact path="/" component={Accueil}/>
       <Route exact path="/presentation" component={Presentation}/>
       <Route exact path="/membres" component={Membres}/>
-      <Route exact path="/users" component={Login} />
-      <Route path="/register" component={Register} />
-      <Route path="/users" component={Users} />
       <Route exact path="/map" component={Map}/>
       <Route exact path="/structure" component={Structure}/>
       <Route exact path="/sondages" component={Sondages}/>

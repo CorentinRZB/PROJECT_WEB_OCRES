@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+/*import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 
@@ -28,4 +28,4 @@ function Users() {
   );
 }
 
-export default Users;
+export default Users;*/

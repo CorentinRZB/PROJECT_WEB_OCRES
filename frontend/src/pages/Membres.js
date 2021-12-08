@@ -2,8 +2,8 @@ import React from 'react';
 import Scroll from '../components/Scroll';
 import Logo from '../components/Logo';
 import Navigation from '../components/Navigation';
-import Login from '../components/Login';
-import Register from '../components/Register';
+import Connexion from '../components/Connexion';
+import Inscription from '../components/Inscription';
 
 
 const Membres = () => {
@@ -12,8 +12,8 @@ const Membres = () => {
             <div className="widget">
                 <Navigation />
                 <Logo />
-                <Login/>
-                <Register/>
+                <Connexion/>
+                <Inscription/>
                 <Scroll left={'/presentation'} right={'/map'} />
             </div>
         </main>

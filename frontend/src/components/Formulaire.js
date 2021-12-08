@@ -5,7 +5,7 @@ import emailjs from "emailjs-com";
 const Formulaire = () => {
   //Déclaration de chaque input
   const [name, setName] = useState("");
-  const [company, setCompany] = useState("");
+  const [promo, setPromo] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -50,7 +50,7 @@ const Formulaire = () => {
           "template_yrg83h7", //ID de mon template
           {
             name,
-            company,
+            promo,
             phone,
             email,
             message,
@@ -68,7 +68,7 @@ const Formulaire = () => {
             document.getElementById("message").classList.remove("error");
             //Réinitialisation des champs
             setName("");
-            setCompany("");
+            setPromo("");
             setPhone("");
             setEmail("");
             setMessage("");
@@ -118,12 +118,12 @@ const Formulaire = () => {
         />
         <input
           type="text"
-          id="company"
-          name="company"
+          id="promo"
+          name="promo"
           required
-          onChange={(e) => setCompany(e.target.value)}
+          onChange={(e) => setPromo(e.target.value)}
           placeholder="promo"
-          value={company}
+          value={promo}
         />
         <input
           type="text"
@@ -158,7 +158,7 @@ const Formulaire = () => {
       <input
         className="button hover"
         type="submit"
-        value="envoyer"
+        value="Envoyer"
         onClick={(e) => handleSubmit(e)}
       />
       <div className="form-message"></div>

@@ -70,16 +70,29 @@ const app2 = express();
 const UsersModel = require("./models/users.models");
 
 app2.use(express.json());
+app2.use(cors());
 
-//changer url et mettre celui de mongo atlas
+//URL Mongo Atlas
 mongoose.connect("mongodb+srv://ecepoker:ece2021@crud.fnkos.mongodb.net/users?retryWrites=true&w=majority", {
     useNewUrlParser: true, 
 }
 );
 
-app2.get("/", async (req,res) => {
-  const users = new UsersModel({email: "coco@gmail.com", password: "ECE"});
+app2.get("/membres", async(req,res) => {
+  UsersModel.find({},(err,result) => {
+    if(err) {
+      res.send(err);
+    }
+    res.send(result);
+  })
+})
 
+app2.post("/inscription", async (req,res) => {
+  const firstname=req.body.firstname;
+  const lastname=req.body.lastname;
+  const email=req.body.email;
+  const password=req.body.password;
+  const users = new UsersModel({firstname:firstname,lastname:lastname,email: email, password: password});
   try{
     await users.save();
     res.send("inserted data");
@@ -88,63 +101,26 @@ app2.get("/", async (req,res) => {
   }
 });
 
+app2.put("/maj", async (req,res) => {
+  const newEmail = req.body.newEmail;
+  const id = req.body.id;
+  try{
+    await UsersModel.findById(id,(err,majMembre) => {
+      majMembre.email=newEmail;
+      majMembre.save();
+      res.send("mise à jour");
+    })
+  }catch(err){
+    console.log(err);
+  }
+});
+
+app2.delete("/suppression/:id", async(req,res) => {
+  const id = req.params.id;
+  await UsersModel.findByIdAndRemove(id).exec();
+  res.send('supprimé');
+})
+
 app2.listen(3001, () => {
   console.log("Server running on port 3001...");
 });
-
-/*
-//REQUETE GET MONGO API
-app2.get("/users", function(req,res){
-  User.find(function(err,users){
-    if(err){
-      res.send(err);
-    }
-    res.json(users);
-  }); 
-});
-
-//REQUETE POST MONGO API
-app2.post("/users", function(req,res){
-  User.create(function(err,user){
-    if(err){
-      res.send(err);
-    }
-    res.json(users);
-  }); 
-});
-
-
-//REQUETE GET BY ID MONGO API
-app2.get("/users/:id", function(req,res){
-  User.findById(req.params.id,function(err,user){
-    if(err){
-      res.send(err);
-    }
-    res.json(user);
-  }); 
-});
-
-//REQUETE PUT BY ID MONGO API
-app2.put("/users/:id", function(req,res){
-  User.findByIdAndUpdate(req.params.id,req.body, function(err,user){
-    if(err){
-      res.send(err);
-    }
-    res.json(user); 
-  }); 
-});
-
-//REQUETE DELETE BY ID MONGO API
-app2.delete("/users/:id", function(req,res){
-  User.findByIdAndRemove(req.params.id,req.body, function(err,user){
-    if(err){
-      res.send(err);
-    }
-    res.json(user); 
-  }); 
-});
-
-*/
-
-
-  
